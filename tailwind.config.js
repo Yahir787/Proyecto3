@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["../collection/templates/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        '5': 'repeat(5, minmax(0, 1fr)',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    ],
+  ],
 }
 
