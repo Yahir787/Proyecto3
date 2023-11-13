@@ -1,0 +1,19 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+<div class=" flex flex-col justify-items-center md:mx-auto md:max-w-screen-2xl px-2">
+{% for art in artworks %}
+<a href="/artwork/{{art.id}}">
+    <ul class="py-2">
+      <div style="width:230px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="flex flex-col items-center">
+          <img class="rounded-2xl shadow-lg w-fit p-1" style="height: fit-content;" src="{{art.image_url}}" id="botton_img">
+          <h2 class="w-full font-bold p-1 text-center">{{art.title}}</h2>
+          <span class="font-bold rounded-xl p-1 h-auto w-fit text-slate-700">{{art.author.name}}</span> 
+        </div>
+      </div>
+    </ul>  
+  </a>        
+{% endfor %}
+</div>
+{% endblock content %}

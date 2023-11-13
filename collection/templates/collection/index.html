@@ -3,30 +3,30 @@
 {% block content %}
 <div class=" flex flex-col justify-items-center md:mx-auto md:max-w-screen-2xl px-2">
         {% if user.is_authenticated %}
-        <div class="my-5 bg-slate-200 border-l-4 border-slate-500 text-slate-700 p-6 text-center" role="alert">
-        <p class="font-bold">Hola {{user.username}}</p>
-          <p>Aquí podras 12 pinturas aleatorias.</p>  
-          <p class="font-bold"> <a class="text-sky-600" href="/accounts/logout"> Termina la sesión </a></p>
-        </div>
-        <div class = ""> 
+        <div class="my-5 bg-slate-200 border-4 border-slate-500 text-slate-700 p-6 text-center" role="alert">
+          <p class="font-bold">Hola {{user.username}}</p>
+            <p>Aquí podras 12 pinturas aleatorias.</p>     
+          </div>
+        
+        <div class = "bg-slate-200 p-6 grid grid-cols-4 justify-items-center border-4 border-slate-500"> 
           {% for art in artworks %}
             <a href="/artwork/{{art.id}}">
-                <ul>
-                  <div class="bg-slate-200 border-slate-300 border gap-2 p-2 " style="height:425px; width:230px; display: flex; flex-direction: column; justify-content: space-between;">
+              <ul class="py-2">
+                <div style="width:230px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div class="flex flex-col items-center">
+                    <img class="rounded-2xl shadow-lg w-fit p-1" style="height: fit-content;" src="{{art.image_url}}" id="botton_img">
                     <h2 class="w-full font-bold p-1 text-center">{{art.title}}</h2>
-                    <div class="flex flex-col items-center">
-                      <img class="rounded-2xl shadow-lg w-fit p-1" src="{{art.image_url}}" id="botton_img">
-                      <span class="font-bold rounded-xl p-1 h-auto w-fit">Hola soy un autor</span> 
-                    </div>
+                    <span class="font-bold rounded-xl p-1 h-auto w-fit text-slate-700">{{art.author.name}}</span> 
                   </div>
-                </ul>  
+                </div>
+              </ul>  
             </a>        
             {% endfor %}
         </div>
         {% else %}
-        <div class="my-5 bg-slate-200 border-l-4 border-slate-500 text-slate-700 p-6" role="alert">
+        <div class="my-5 bg-slate-200 border-4 border-slate-500 text-slate-700 p-6" role="alert">
           <p class="font-bold">Hola</p>
-          <p > Por favor <a class="text-sky-600 font-bold" href="/accounts/login"> inicia sesión </a> para ver esta página.</p>
+          <p > Por favor inicia sesión para ver esta página.</p>
         </div>
         {% endif %}
 </div>

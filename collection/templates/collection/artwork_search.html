@@ -1,0 +1,43 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+<div class="p-10 md:mx-auto md:max-w-screen-2xl m-16">
+ 
+    <div class = "bg-slate-200 p-6 justify-items-center border-4 border-slate-600 grid grid-cols-4"> 
+      {% for art in page_obj %}  
+      <a href="/artwork/{{art.id}}">
+        <ul class="py-2">
+          <div style="width:230px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="flex flex-col items-center">
+              <img class="rounded-2xl shadow-lg w-fit p-1" style="height: fit-content;" src="{{art.image_url}}"id="botton_img">
+              <h2 class="w-full font-bold p-1 text-center">{{art.title}}</h2>
+              <span class="font-bold rounded-xl p-1 h-auto w-fit text-slate-700">{{art.author.name}}</span> 
+            </div>
+          </div>
+        </ul>  
+      </a>  
+      {% endfor %} 
+    </div>
+    <nav class="flex items-center justify-between border-4 border-slate-600 bg-slate-200 px-4 py-3 sm:px-6 mt-8" aria-label="Pagination">
+      <div class="hidden sm:block">
+        <p class="text-sm text-gray-500">
+          <span class="font-medium">{{ page_obj.number }}</span>
+          of
+          <span class="font-medium">{{ page_obj.paginator.num_pages }}</span>
+        </p>
+      </div>
+      <div class="flex flex-1 justify-between sm:justify-end">
+    {% if page_obj.has_previous %}
+        <a href="?search={{ search_value|stringformat:'s'}}&page={{ page_obj.previous_page_number }}" class="relative inline-flex items-center rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-gray-900 ring-2 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">Previous</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+        <a href="?search={{ search_value|stringformat:'s'}}&page={{ page_obj.next_page_number }}" class="relative ml-3 inline-flex items-center rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-gray-900 ring-2 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">Next</a>
+      </div>
+    {% endif %}
+    </nav>
+
+</div>
+
+
+
+{% endblock content %}

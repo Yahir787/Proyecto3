@@ -1,6 +1,41 @@
 {% extends "collection/base.html" %}
 
 {% block content %}
+<div class="p-10 md:mx-auto md:max-w-screen-2xl m-10 relative">
+ 
+  <div class = "bg-slate-200 p-6 flex justify-items-center border-4 border-slate-600 relative"> 
+    <img class="p-5" style="max-height: 500px;" src="{{artwork.image_url}}">
+    <div>
+      <h2 class="flex font-bold border-b-4 border-slate-600">
+      <span class="text-4xl pt-5 pr-2">{{artwork.title}}</span>
+      <span class="text-slate-700 text-xl pt-8">{{artwork.author.name}}</span>
+      </h2>
 
+        <div class="text-slate-700 flex flex-col pt-5 text-lg">
+            <span class="mt-auto pb-4 flex font-bold">
+            Fecha 
+            <p class="font-semibold">: {{artwork.date}}</p>
+            
+            </span>
+            <span class="mt-auto pb-4 flex font-bold"> 
+              Estilo    
+              <p class="font-semibold">: {{artwork.style.name}}</p>
+            </span>
+            <span class="mt-auto pb-4 flex font-bold"> 
+              Genero    
+              <p class="font-semibold">: {{artwork.genre.name}}</p>
+            </span>
+            <span class="mt-auto pb-4 flex font-bold"> 
+              Periodo  
+              <p class="font-semibold">: {{artwork.period.name}}</p>
+            </span>
+
+        </div>
+        <button hx-get="{% url 'artwork_collection' artwork.pk %}" hx-target="body" hx-swap="beforeend" class="absolute bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4">
+          Agregar a coleccón
+        </button> 
+    </div>
+  </div>         
+</div>
 
 {% endblock content %}

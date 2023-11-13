@@ -1,0 +1,32 @@
+{% for collection in collections %}
+  <ul class="py-2 relative">
+    <div class="bg-slate-200 shadow-lg rounded-xl relative" style="width: 230px; display: flex; flex-direction: column; justify-content: space-between;">
+      <!-- Boton izquierda -->
+      <button type="button" class="absolute top-0 left-0 bg-blue-500 p-1 hover:bg-blue-700 rounded-xl" hx-get="{% url 'collection_edit' collection.id %}" hx-target="body" hx-swap="beforeend">
+        
+        <svg class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M14.293 3.293l2.414 2.414-9 9a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414l9-9a1 1 0 011.414 0z"/>
+                <path d="M3 14a1 1 0 110 2H2a1 1 0 110-2h1zm2-2a1 1 0 110 2H4a1 1 0 110-2h1zm2-2a1 1 0 110 2H6a1 1 0 110-2h1z"/>
+        </svg>
+        </button>
+
+      <!-- Boton derecha -->
+      <button type="button" class="absolute top-0 right-0 bg-red-500 hover:bg-red-700 p-1 rounded-xl" hx-get="{% url 'collection_delete' collection.id %}" hx-target="body" hx-swap="beforeend">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+
+      </button>
+
+      <div class="flex flex-col items-center">
+        <img class="rounded-lg w-fit" style="height: fit-content;" src="https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00750002592180l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF">
+        <div class="max-w-md mx-auto">
+          <a href="/collection/{{collection.id}}">
+           <h2 class="w-full font-bold p-1 text-center border-b-4 border-blue-900 hover:text-blue-900">{{collection.name}}</h2>
+          </a>
+        </div>
+        <span class="font-bold rounded-xl p-1 h-auto w-fit text-slate-700">{{collection.description}}</span> 
+      </div>
+    </div>
+  </ul>  
+{% endfor %}

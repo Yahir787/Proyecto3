@@ -1,0 +1,32 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+<div class="bg-slate-200 border-4 border-slate-500 m-16 container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center pb-4 border-b-4 border-blue-900">
+      <div class="sm:flex-auto">
+        <h1 class="font-bold text-xl leading-6 text-gray-900">Colecciones</h1>
+      </div>
+      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        <button type="button" class="block rounded-md bg-blue-900 px-3
+                      py-2 text-center text-sm font-semibold text-white 
+                      shadow-sm hover:bg-blue-800 focus-visible:outline 
+                      focus-visible:outline-2 focus-visible:outline-offset-2 
+                      focus-visible:outline-blue-900"
+                     hx-get="/collection/add" hx-target="body" hx-swap="beforeend" 
+                  >Agrega una collección</button>
+      </div>
+    </div>
+    <div class="mt-8 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="grid grid-cols-4">
+           {% include "collection/collection_list.html" %}              
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

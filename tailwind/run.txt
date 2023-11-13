@@ -1,0 +1,2 @@
+./tailwind/tailwindcss -i ./collection/static/arts/assets/css/input.css -o ./collection/static/arts/assets/css/output.css --watch
+./tailwind/tailwindcss -i ./collection/static/arts/assets/css/input.css -o ./collection/static/arts/assets/css/output.css --minify

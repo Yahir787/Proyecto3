@@ -1,11 +1,55 @@
 {% load static %}
-<div class=" flex justify-center md:mx-auto md:max-w-screen-xl px-2">
-  <div class="mt-6 mx-auto">
-     <a class="" href="/">
-        <span class="sr-only">Artworks</span>
-        <img class="h-20 w-auto" src="{% static 'img/logo.png' %}" 
-                alt="artworks">
-     </a>
-  </div>
+<nav class="bg-slate-200 shadow mx-auto">
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+    <div class="flex h-16 justify-between">
+      <div class="flex px-2 lg:px-0">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="h-8 w-auto" src="{% static '/arts/assets/img/logo.png' %}" alt="Artworks">
+        </div>
+        <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+          <a href="/" class="inline-flex items-center border-b-2 
+          {% if request.path == '/' %} 
+          border-blue-900 text-blue-900 
+          {% else %} 
+          border-transparent hover:text-blue-900 hover:border-blue-900 text-slate-900
+          {% endif %}
+          px-1 pt-1 text-sm font-medium">Principal</a>
+           {% if user.is_authenticated %}
+           <a href="/collections" class="inline-flex items-center border-b-2 
+           {% if request.path == '/collections/' %}
+           border-blue-900 text-blue-900
+           {% else %} 
+           border-transparent hover:text-blue-900 hover:border-blue-900 text-slate-900
+           {% endif %}
+           px-1 pt-1 text-sm font-medium">Mis Colecciones</a>
+           {% endif %}
+        </div>
+      </div>
+      <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+  <form method="get" action="/artworks/search" class="relative mx-auto w-max">
+    <div class="relative w-max">
+      <input type="search" id="search" name="search" class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-blue-900 focus:pl-16 focus:pr-4" placeholder="Buscar" 
+        {% if search_value != None %} value="{{ search_value|stringformat:'s' }}" {% endif %}>
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-blue-900 peer-focus:stroke-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+  </form>
 </div>
-
+      <div class="hidden lg:ml-4 lg:flex lg:items-center">
+        {% if user.is_authenticated %}
+          <div class="relative ml-4 flex-shrink-0">
+            <a href="/accounts/logout" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-900 hover:text-blue-900">Termina Sesión</a>
+          </div>
+        {% else %}   
+          <div class="relative ml-4 flex-shrink-0">
+            <a href="/accounts/login" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-900 hover:text-blue-900">Inicia Sesión</a>
+          </div>
+          <div class="relative ml-4 flex-shrink-0">
+            <a href="/accounts/register/" class="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-900 rounded-xl bg-transparent border-4 border-slate-900 transition hover:border-blue-900 hover:text-blue-900"> Regístrate </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
