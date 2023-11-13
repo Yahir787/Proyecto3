@@ -7,6 +7,7 @@ urlpatterns = [
     path("artwork/<int:artwork_id>", views.artwork, name="artwork"),
     path("artwork/<int:artwork_id>/add", views.artwork_add_to_collectionFORM, name="artwork_collection"),
     path("artwork/<int:artwork_id>/add/<int:collection_id>", views.SendArtworkTo, name="artwork_collection"),
+    path("artworks/random", views.random_artworks, name="random_artworks"),
     path("artworks/search", views.search_artworks, name="search_artworks"),
     path("accounts/register/", views.register, name="register"),
     path("collections/", views.collections, name="collections"),

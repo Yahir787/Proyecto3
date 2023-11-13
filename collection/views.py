@@ -28,15 +28,23 @@ def register(request):
 
 def index(request):
     artworks = list(Artwork.objects.all())
-    random_art = []
+    random_works = []
     if artworks:
-        random_art = random.sample(artworks, 12)
-    return render(request, 'collection/index.html', {'artworks': random_art})
+        random_works = random.sample(artworks, 12)
+    return render(request, 'collection/index.html', {'artworks': random_works})
 
 
 def artwork(request, artwork_id):
     artwork = Artwork.objects.get(pk=artwork_id)
     return render(request, 'collection/artwork.html',{'artwork':artwork})
+
+def random_artworks(request):
+    artworks = list(Artwork.objects.all())
+    random_works = []
+    if artworks:
+        random_works = random.sample(artworks, 12)
+    return render(request, 'collection/artworks_random.html',
+                  {'artworks': random_works})
 
 def search_artworks(request):
     if request.method == 'GET':
