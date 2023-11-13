@@ -80,8 +80,20 @@ def collections(request):
 
 def collection_list(request):
     collections = Collection.objects.filter(owner=request.user)
+    for c in collections:
+        random_image(c.pk)
     return render(request, 'collection/collection_list.html',
                   {'collections': collections})
+
+def random_image(request, collection_id):
+    collections = Collection.objects.get(pk=collection_id)
+    print(collections.artworks.all())
+    x = list(collections.artworks.all())
+    if x:
+        a = random.sample(x, 1)
+        print(a)
+    return render(request, 'collection/collection_list.html',
+                  {'collections': collections, 'a': a})
 
 
 def collection_add(request):
@@ -160,7 +172,6 @@ def collection_delete(request, collection_id):
 
 def collection_artworks(request, collection_id):
     collections = Collection.objects.get(pk=collection_id)
-    print(collections.artworks.all())
     return render(request, 'collection/artwork_collection.html', {'artworks': collections.artworks.all()})
 
 
