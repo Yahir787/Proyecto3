@@ -1,8 +1,8 @@
 {% extends "collection/base.html" %}
-
 {% block content %}
-<div class=" flex flex-col justify-items-center md:mx-auto md:max-w-screen-2xl px-2">
+<div class="flex flex-col-4 justify-start md:mx-auto md:max-w-screen-2xl px-2">
 {% for art in artworks %}
+<div class="bg-slate-100">
 <a href="/artwork/{{art.id}}">
     <ul class="py-2">
       <div style="width:230px; display: flex; flex-direction: column; justify-content: space-between;">
@@ -13,7 +13,8 @@
         </div>
       </div>
     </ul>  
-  </a>        
+  </a>
+</div>        
 {% endfor %}
 </div>
 {% endblock content %}
