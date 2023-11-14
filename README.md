@@ -47,6 +47,18 @@ Una vez que tengamos la base de datos podemos iniciar la implementación de los 
 En esta aplicación utilizaremos programación del lado del cliente utilizando las librerías [htmx](https://htmx.org/) y [hyperscript](https://hyperscript.org/).  
 De manera opcional puedes utilizar otras librerías o JS.
 
+### Imágenes 
+Pagina principal
+![Pagina Principal](Imagenes/PantallaPrincipal.png)
+
+Vista Detalla de la pintura
+![Vista detallada](Imagenes/artwork.png)
+
+Vista de la busqueda
+![Actor](Imagenes/busqueda.png)
+
+Vista detallada de las colecciones
+![Actor](Imagenes/colecciones.png)
 
 
 
