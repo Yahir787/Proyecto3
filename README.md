@@ -1,5 +1,22 @@
 # Artworks Proyecto 3
 
+## Integrantes
+* Gonzalez Dominguez Yahir Emiliano 20211783
+* Jimenez Herrera Alan 20211795
+* Rosales Espinoza Edgar Uriel 2021
+* Sobrado Espinoza Sergio Rosario 20211848
+
+## Capturas de Pantalla 
+
+## Funcionalidades
+* El usuario puede inciar sesión
+* El usuario puede crear colecciones de pinturas y añardir pinturas a sus colecciones
+* El usuario puede editar las caracteriticas de las colecciones
+* El usuario puede eliminar las colecciones que le pertenecen
+* La pagina carga 12 pinturas de manera aleatoria y puede cargar más con un botón
+* La pagina permite buscar pinturas por autores, generos y nombres de pinturas
+* Las pinturas muestran el nombre, el autor y la fecha de creación
+
 ## Descripción General
 
 Este proyecto consiste en una aplicación para guardar, compartir y coleccionar 
