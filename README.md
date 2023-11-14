@@ -7,6 +7,17 @@
 * Sobrado Espinoza Sergio Rosario 20211848
 
 ## Capturas de Pantalla 
+Pagina principal
+![Pagina Principal](Imagenes/PantallaPrincipal.PNG)
+
+Vista Detalla de la pintura
+![artwork](Imagenes/artwork.PNG)
+
+Vista de la busqueda
+![busqueda](Imagenes/busqueda.PNG)
+
+Vista detallada de las colecciones
+![colecciones](Imagenes/colecciones.PNG)
 
 ## Funcionalidades
 * El usuario puede inciar sesión
@@ -46,19 +57,6 @@ Una vez que tengamos la base de datos podemos iniciar la implementación de los 
 
 En esta aplicación utilizaremos programación del lado del cliente utilizando las librerías [htmx](https://htmx.org/) y [hyperscript](https://hyperscript.org/).  
 De manera opcional puedes utilizar otras librerías o JS.
-
-### Imágenes 
-Pagina principal
-![Pagina Principal](Imagenes/PantallaPrincipal.PNG)
-
-Vista Detalla de la pintura
-![artwork](Imagenes/artwork.PNG)
-
-Vista de la busqueda
-![busqueda](Imagenes/busqueda.PNG)
-
-Vista detallada de las colecciones
-![colecciones](Imagenes/colecciones.PNG)
 
 
 
