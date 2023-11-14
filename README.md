@@ -49,16 +49,16 @@ De manera opcional puedes utilizar otras librerías o JS.
 
 ### Imágenes 
 Pagina principal
-![Pagina Principal](Imagenes/PantallaPrincipal.png)
+![Pagina Principal](Imagenes/PantallaPrincipal.PNG)
 
 Vista Detalla de la pintura
-![Vista detallada](Imagenes/artwork.png)
+![artwork](Imagenes/artwork.PNG)
 
 Vista de la busqueda
-![Actor](Imagenes/busqueda.png)
+![busqueda](Imagenes/busqueda.PNG)
 
 Vista detallada de las colecciones
-![Actor](Imagenes/colecciones.png)
+![colecciones](Imagenes/colecciones.PNG)
 
 
 
